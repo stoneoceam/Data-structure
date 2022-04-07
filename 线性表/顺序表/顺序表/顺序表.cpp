@@ -27,12 +27,12 @@ typedef struct {
 Status InitList(SqList &L);//初始化操作，建立一个空的顺序表L
 void DestroyList(SqList &L);//销毁已存在的顺序表L
 void ClearList(SqList &L);//将顺序表清空
-Status ListInsert(SqList& L, int i, int e);//在顺序表L中第i个位置插入新元素e
-Status ListDelete(SqList& L, int i, int& e);//删除顺序表L中第i个位置元素，用e返回
+Status ListInsert(SqList& L, int i, ElemType e);//在顺序表L中第i个位置插入新元素e
+Status ListDelete(SqList& L, int i, ElemType& e);//删除顺序表L中第i个位置元素，用e返回
 Status IsEmpty(SqList L);//若顺序表为空，返回true，否则false
 Status ListLength(SqList L);//返回顺序表的元素个数
-Status LocateElem(SqList L, int e);//L中查找与给定值e相等的元素，若成功返回该元素在表中的序号，否则返回0
-void GetElem(SqList L, int i, int& e);//将顺序表L中的第i个元素返回给e
+Status LocateElem(SqList L, ElemType e);//L中查找与给定值e相等的元素，若成功返回该元素在表中的序号，否则返回0
+void GetElem(SqList L, int i, ElemType& e);//将顺序表L中的第i个元素返回给e
 
 //主函数
 int main() {
@@ -59,7 +59,7 @@ void ClearList(SqList& L) {
 }//ClearLIst
 
 //在顺序表L中第i个位置插入新元素e
-Status ListInsert(SqList& L, int i, int e) {
+Status ListInsert(SqList& L, int i, ElemType e) {
 	if (i < 1 || i > L.length + 1) return ERROR;
 	if (L.length >= LIST_MAX_SIZE) return ERROR;
 	for (int j = L.length-1; j >= i-1; j--) {
@@ -71,7 +71,7 @@ Status ListInsert(SqList& L, int i, int e) {
 }//ListInsert
 
 //删除顺序表L中第i个位置元素，用e返回
-Status ListDelete(SqList& L, int i, int& e) {
+Status ListDelete(SqList& L, int i, ElemType& e) {
 	if (i<1 || i>L.length) return ERROR;
 	e = L.elem[i - 1];
 	for (int j = i; j < L.length; j++) {
@@ -95,7 +95,7 @@ Status ListLength(SqList L) {
 }//ListLength
 
 //L中查找与给定值e相等的元素，若成功返回该元素在表中的序号，否则返回0
-Status LocateElem(SqList L, int e) {
+Status LocateElem(SqList L, ElemType e) {
 	int flag = 0;
 	for (int i = 0; i < L.length; i++) {
 		if (L.elem[i] == e) {
@@ -111,7 +111,7 @@ Status LocateElem(SqList L, int e) {
 }//LocateElem
 
 //将顺序表L中的第i个元素返回给e
-void GetElem(SqList L, int i, int& e) {
+void GetElem(SqList L, int i, ElemType& e) {
 	for (int j = 0; j < L.length; j++) {
 		if (j == i - 1)
 			e = L.elem[j];
