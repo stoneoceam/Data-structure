@@ -1,0 +1,4 @@
+﻿  链表.cpp
+E:\Data-structure\线性表\链表\链表\链表.cpp(10,1): warning C4005: “OVERFLOW”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(971): message : 参见“OVERFLOW”的前一个定义
+  链表.vcxproj -> E:\Data-structure\线性表\链表\x64\Debug\链表.exe
