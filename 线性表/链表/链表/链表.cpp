@@ -28,8 +28,9 @@ Status DestroyLsit(LinkList& L);//销毁单链表
 Status ClearList(LinkList& L);//清空链表L
 Status ListLength(LinkList& L);//返回链表的元素个数
 Status GetElem(LinkList& L, int i, ElemType& e);//获取单链表中的某个元素的内容，用变量e返回
-Lnode* LocateElem(LinkList L, ElemType e);//在顺序表中查找值为e的数据元素，若找到则返回值为e的数据元素的地址，否则返回NULL
+Lnode* LocateElem(LinkList L, ElemType e);//在单链表中查找值为e的数据元素，若找到则返回值为e的数据元素的地址，否则返回NULL
 Status ListInsert(LinkList& L, int i, ElemType e);//在链表的第i个元素之前插入数据元素e
+Status LIstDelete(LinkList& L, int i, ElemType& e);//将单链表中的第i个元素删除
 
 
 
@@ -133,3 +134,20 @@ Status ListInsert(LinkList& L, int i, ElemType e) {
 	p->next = q;
 	return OK;
 }//ListInsert
+
+//将单链表中的第i个元素删除
+Status LIstDelete(LinkList& L, int i, ElemType& e) {
+	Lnode* p=L;
+	Lnode* q;
+	int j = 0;
+	while (p->next && j < i - 1) {
+		p = p->next;
+		j++;
+	}
+	if (!(p->next) || j > i - 1) return ERROR;
+	q = p->next;
+	p->next = q->next;
+	e = q->data;
+	delete q;
+	return OK;
+}//LIstDelete
