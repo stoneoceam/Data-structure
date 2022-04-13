@@ -39,9 +39,9 @@ typedef struct complex_number{
 //基本操作
 void output(plural n);//输出
 void add(plural a, plural b);//两个复数求和
-void subtraction(plural a, plural b);//两个复数求差
-void multiplication(plural a, plural b);//两个复数求积
-void division(plural a, plural b);//两个复数求商
+void sub(plural a, plural b);//两个复数求差
+void mul(plural a, plural b);//两个复数求积
+void div(plural a, plural b);//两个复数求商
 void real(plural n);//从已知复数中分离出实部
 void imaginary(plural n);//从已知复数中分离出虚部
 void conjugate(plural n);//求共轭
@@ -55,7 +55,7 @@ int main() {
 	a.Imaginary = 2.34;
 	b.Real = 0.1;
 	b.Imaginary = -6.5;
-	division(a, b);
+	div(a, b);
 	conjugate(a);
 	imaginary(a);
 
@@ -92,7 +92,7 @@ void add(plural a, plural b) {
 }
 
 //两个复数求差
-void subtraction(plural a, plural b) {
+void sub(plural a, plural b) {
 	plural c;
 	c.Real = a.Real - b.Real;
 	c.Imaginary = a.Imaginary - b.Imaginary;
@@ -100,7 +100,7 @@ void subtraction(plural a, plural b) {
 }
 
 //两个复数求积
-void multiplication(plural a, plural b) {
+void mul(plural a, plural b) {
 	plural c;
 	c.Real = (a.Real * b.Real - a.Imaginary * b.Imaginary);
 	c.Imaginary = (a.Real * b.Imaginary + a.Imaginary * b.Real);
@@ -108,7 +108,7 @@ void multiplication(plural a, plural b) {
 }
 
 //两个复数求商
-void division(plural a, plural b) {
+void div(plural a, plural b) {
 	plural c;
 	double i;
 	i = b.Real * b.Real + b.Imaginary * b.Imaginary;
