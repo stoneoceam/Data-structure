@@ -1,0 +1,4 @@
+﻿  main.cpp
+E:\Data-structure\数据结构题集\实习1 线性表及其应用\1.4 长整数四则运算\1.4 长整数四则运算\main.cpp(54,22): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+E:\Data-structure\数据结构题集\实习1 线性表及其应用\1.4 长整数四则运算\1.4 长整数四则运算\main.cpp(61,20): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  1.4 长整数四则运算.vcxproj -> E:\Data-structure\数据结构题集\实习1 线性表及其应用\1.4 长整数四则运算\x64\Debug\1.4 长整数四则运算.exe
