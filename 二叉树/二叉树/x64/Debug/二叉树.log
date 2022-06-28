@@ -1,0 +1,5 @@
+﻿  binary_tree.cpp
+  源.cpp
+E:\Data-structure\二叉树\二叉树\源.cpp(7,9): warning C4101: “T1”: 未引用的局部变量
+  正在生成代码...
+  二叉树.vcxproj -> E:\Data-structure\二叉树\x64\Debug\二叉树.exe
